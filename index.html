@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Surprise</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #ffc0cb, #ff4d6d);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4em;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 5px #ff0000;
+        }
+
+        .btn {
+            background: #ff4d6d;
+            border: none;
+            padding: 20px 50px;
+            font-size: 2em;
+            color: white;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #ff1a3c;
+            transform: scale(1.1);
+        }
+
+        img.hero {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255,0,50,0.6);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Her photo -->
+    <img src="her_photo.jpg" alt="Her" class="hero">
+
+    <h1>Will you be my valentaqdees?</h1>
+    <button class="btn" onclick="window.location.href='second.html'">Click me for yes 💖</button>
+</body>
+</html>
