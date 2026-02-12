@@ -1,119 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yes! 💖</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yes! 💖</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom right, #ffccd5, #ff4d6d);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            color: white;
-            overflow: hidden;
-            position: relative;
-        }
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        font-family: 'Arial', sans-serif;
+    }
 
-        h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 4em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px #ff0000;
-        }
+    body {
+        background: linear-gradient(to bottom right, #ffccd5, #ff4d6d);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        color: white;
+    }
 
-        p {
-            font-size: 1.5em;
-            max-width: 600px;
-            margin: 10px 20px;
-            line-height: 1.5em;
-        }
+    /* Hero image with overlay */
+    .hero-container {
+        position: relative;
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 0 40px rgba(255,0,50,0.7);
+    }
 
-        /* Hero photo */
-        img.hero {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 90%;
-            max-height: 80%;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(255,0,50,0.6);
-            z-index: -1;
-        }
+    .hero-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: brightness(60%);
+    }
 
-        /* Floating hearts */
-        .heart {
-            position: absolute;
-            font-size: 2em;
-            animation: floatHeart 6s infinite;
-        }
-        .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
-        .heart:nth-child(2) { left: 50%; animation-delay: 2s; }
-        .heart:nth-child(3) { left: 80%; animation-delay: 4s; }
+    /* Text overlay */
+    .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Great Vibes', cursive;
+        font-size: 3em;
+        text-shadow: 2px 2px 10px #ff0000;
+        max-width: 80%;
+    }
 
-        @keyframes floatHeart {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-40px); }
-            100% { transform: translateY(0px); }
-        }
+    /* Quotes container */
+    .quotes {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.5em;
+        line-height: 1.5em;
+        text-shadow: 2px 2px 8px #000000aa;
+        max-width: 80%;
+    }
 
-        /* Falling petals */
-        .petal {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-image: url('https://i.postimg.cc/9F4BkrjX/rose.png');
-            background-size: cover;
-            animation: fall 6s linear infinite;
-        }
+    /* Falling petals */
+    .petal {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-image: url('https://i.postimg.cc/9F4BkrjX/rose.png');
+        background-size: cover;
+        pointer-events: none;
+        animation: fall linear infinite;
+    }
 
-        @keyframes fall {
-            0% { transform: translateY(-50px) rotate(0deg); opacity:1; }
-            100% { transform: translateY(100vh) rotate(360deg); opacity:0; }
-        }
-    </style>
+    @keyframes fall {
+        0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Floating hearts */
+    .heart {
+        position: absolute;
+        font-size: 2em;
+        animation: floatHeart 6s infinite;
+    }
+
+    .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .heart:nth-child(2) { left: 50%; animation-delay: 2s; }
+    .heart:nth-child(3) { left: 80%; animation-delay: 4s; }
+
+    @keyframes floatHeart {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-40px); }
+        100% { transform: translateY(0px); }
+    }
+</style>
 </head>
 <body>
-    <!-- Both of you -->
-    <img src="ISIMG-1113095.jpeg" alt="Us" class="hero">
 
-    <!-- Floating hearts -->
-    <div class="heart">💖</div>
-    <div class="heart">💖</div>
-    <div class="heart">💖</div>
+<div class="hero-container">
+    <img src="both_photo.jpg" alt="Us">
+</div>
 
-    <!-- Romantic text -->
-    <h1>Yes! 💖</h1>
+<!-- Floating hearts -->
+<div class="heart">💖</div>
+<div class="heart">💖</div>
+<div class="heart">💖</div>
+
+<!-- Falling petals -->
+<script>
+    const numPetals = 25;
+    for(let i=0; i<numPetals; i++){
+        let petal = document.createElement('div');
+        petal.classList.add('petal');
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.animationDuration = (4 + Math.random() * 4) + 's';
+        petal.style.animationDelay = Math.random() * 6 + 's';
+        document.body.appendChild(petal);
+    }
+</script>
+
+<!-- Quotes -->
+<div class="quotes">
     <p>"You are the reason I smile every day. ❤️"</p>
     <p>"Every moment with you is my favorite. 🌹"</p>
     <p>"I never knew love until I met you. 💕"</p>
     <p>"Together is my favorite place to be. 💗"</p>
+</div>
 
-    <!-- Falling petals -->
-    <script>
-        const numPetals = 20; // number of petals
-        for(let i=0; i<numPetals; i++){
-            let petal = document.createElement('div');
-            petal.classList.add('petal');
-            petal.style.left = Math.random() * 100 + 'vw';
-            petal.style.animationDuration = (4 + Math.random() * 4) + 's';
-            petal.style.animationDelay = Math.random() * 6 + 's';
-            document.body.appendChild(petal);
-        }
-    </script>
+<!-- Background music -->
+<audio autoplay loop>
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/450p7goxZqg?autoplay=1&loop=1&playlist=450p7goxZqg" frameborder="0" allow="autoplay"></iframe>
+</audio>
 
-    <!-- Background music -->
-    <audio autoplay loop>
-        <source src="all_of_me.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
 </body>
 </html>
